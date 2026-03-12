@@ -1,53 +1,65 @@
-# Project Description
-This project hides a secret text message inside a BMP image using the Least Significant Bit (LSB) steganography technique. The program reads a cover image and a secret text file, embeds the message bits into the LSB of the image pixels, and generates a new encoded image. The hidden message can later be extracted using a decoding program.
+# Image Steganography using LSB (C)
+# 📌 Project Description
 
-# Technologies Used
-C Programming
-File Handling
+The Image Steganography project hides secret text inside an image using the Least Significant Bit (LSB) technique. The program encodes a secret message into a BMP image file by modifying the least significant bits of image bytes. During decoding, the hidden message is extracted from the image without affecting the visible quality of the image.
+
+# 🎯 Objective
+
+To securely hide secret information inside an image file.
+
+To understand the concept of steganography and data hiding techniques.
+
+To implement encoding and decoding algorithms using C programming.
+
+# 🧠 Concepts Used
+
+File Handling in C
+
 Bit Manipulation
-BMP Image File Format
-Least Significant Bit (LSB) Algorithm
+
+Image Processing Basics
+
 Data Encoding and Decoding
 
-# Working 
+LSB (Least Significant Bit) Technique
 
-# Step 1: Understand the Concept
-Steganography hides secret data inside another file so that the presence of the message is not noticeable.
+# ⚙️ How the System Works
 
-# Step 2: Input Files
-Take a BMP image as the cover image and a text file containing the secret message.
+The program takes a BMP image file as the cover image.
 
-# Step 3: Read the Image File
-Open the BMP image and skip the header section to avoid damaging the image format.
+It reads the secret text file that needs to be hidden.
 
-# Step 4: Read the Secret Message
-Open the text file and read the secret data along with its length.
+The size of the secret file is encoded into the image first.
 
-# Step 5: Encode the Message
-Convert the message characters into binary and embed each bit into the LSB of the image bytes.
+Each bit of the secret data is embedded into the least significant bit of the image bytes.
 
-# Step 6: Create Encoded Image
-Save the modified image as a new BMP file that now contains the hidden message.
+A new stego image is generated containing the hidden data.
 
-# Step 7: Decode the Message
-Read the encoded image and extract the LSB bits to recover the hidden data.
+During decoding, the program extracts the hidden bits from the image and reconstructs the original secret text.
 
-# Step 8: Recover the Secret Text
-Convert the extracted bits back into characters and store them in an output text file.
+# ✨ Features
 
-# Advantages
+Hide secret text inside an image
 
-Provides secure hidden communication
+Decode hidden text from the stego image
 
-Image appears unchanged to the human eye
+Maintains the visual quality of the image
 
-Easy to implement using C programming
+Simple and secure data hiding technique
 
-Does not significantly affect image quality
+# 🚀 Advantages
 
-# Applications
+Secure communication of hidden information
 
-Secure data transmission
+No visible change in the image
+
+Simple and efficient implementation
+
+Demonstrates practical data hiding techniques
+
+# 💡 Applications
+
+Secure data communication
 
 Digital watermarking
 
@@ -55,4 +67,60 @@ Copyright protection
 
 Military and confidential communication
 
-Data hiding in multimedia files
+Information security systems
+
+# 🛠️ Technologies Used
+
+Programming Language: C
+
+Concepts: Bit Manipulation, File Handling
+
+Image Format: BMP
+
+Compiler: GCC
+
+Platform: Linux / Terminal
+
+# 📂 Project Structure
+Steganography/
+│
+
+├── main.c
+
+├── encode.c
+
+├── decode.c
+
+├── header.h
+
+├── types.h
+
+└── test_files/
+
+# ▶️ Steps to Run the Project
+1. Compile the Program
+gcc *.c
+2. Encode Secret Data
+./a.out -e input.bmp secret.txt output.bmp
+3. Decode Secret Data
+./a.out -d output.bmp decoded.txt
+# 📊 Example
+
+# After encoding:
+
+Input Image  : input.bmp
+Secret File  : secret.txt
+Output Image : output.bmp
+
+# After decoding:
+
+Decoded message successfully saved in decoded.txt
+# 📚 Learning Outcomes
+
+Understanding of steganography and data hiding techniques
+
+Practical experience with bit manipulation in C
+
+Implementation of encoding and decoding algorithms
+
+Hands-on practice with file handling and image processing in C
